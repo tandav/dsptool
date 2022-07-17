@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dsptool"
+description = "A set of tools for DSP projects"
+version = "0.4.4"
+author = "Alexander Rodionov"
+author_email = "tandav@tandav.me"
+url = "https://github.com/tandav/dsptool"
+dynamic = ["readme", "dependencies"]
+requires-python = ">=3.8"
+
+[tool.setuptools.dynamic]
+readme = {file = 'README.md'}
+dependencies = {file = 'requirements.txt'}
+
+[options.packages.find]
+exclude = ["tests*"]

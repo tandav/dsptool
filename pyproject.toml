@@ -5,16 +5,27 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "dsptool"
 description = "A set of tools for DSP projects"
-version = "0.4.4"
-author = "Alexander Rodionov"
-author_email = "tandav@tandav.me"
-url = "https://github.com/tandav/dsptool"
-dynamic = ["readme", "dependencies"]
+version = "0.4.5"
+authors = [
+    { name = "Alexander Rodionov", email = "tandav@tandav.me" },
+]
+urls = {homepage = "https://github.com/tandav/dsptool"}
+
 requires-python = ">=3.8"
+readme = 'README.md'
+dynamic = ["dependencies"]
 
-[tool.setuptools.dynamic]
-readme = {file = 'README.md'}
-dependencies = {file = 'requirements.txt'}
 
+[project.optional-dependencies]
+dev = [
+    "bump2version==1.0.1",
+    "pre-commit==2.19.0",
+]
+test = [
+    "pytest==7.1.2",
+]
 [options.packages.find]
 exclude = ["tests*"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = 'requirements.txt'}
